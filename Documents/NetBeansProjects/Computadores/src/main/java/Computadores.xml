@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<computers>
+    <part id="part1">
+        <name>Teclado Mintaka</name>
+        <descripcion>Mintaka 480</descripcion>
+    </part>
+    <part id="part2">
+        <name>Mouse microsoft</name>
+        <descripcion>Microsoft 1020</descripcion>
+    </part>
+    <part id="part3">
+        <name>Procesador AMD</name>
+        <descripcion>AMD Ryzen 5</descripcion>
+    </part>
+    <part id="part4">
+        <name>Base refrigerante</name>
+        <descripcion>Trust 2020</descripcion>
+    </part>
+    <part id="part5">
+        <name>Hub de 8 peuertos</name>
+        <descripcion>Hub marca logitech</descripcion>
+    </part>
+    <part id="part6">
+        <name>Pantalla samsung</name>
+        <descripcion>samsung 4K 32 pulgadas</descripcion>
+    </part>
+</computers>

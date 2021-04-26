@@ -1,0 +1,21 @@
+{
+    "computadores" : [
+        {
+            "name" : "mouse logitech",
+            "descripcion" : "mouse G550  "
+        },
+        {
+            "name" : "procesador",
+            "descripcion" : "intel core i7 11th Gen"
+        },
+        {
+            "name" : "teclado readragon",
+            "descripcion" : "teclado readragon 440"
+        },
+        {
+            "name" : "base refrigerante 1",
+            "descripcion" : "base ref"
+        }
+    ]
+
+}
