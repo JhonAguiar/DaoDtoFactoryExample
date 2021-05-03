@@ -28,7 +28,7 @@ import org.xml.sax.SAXException;
 public class XmlComputerDao implements Dao<Computer> {
     
     private List<Computer> computer = new ArrayList<>();
-    private List<ComputerComponents> computerComponent;
+    private List<ComputerComponents> computerComponent = new ArrayList<>();
     
     public XmlComputerDao() throws ParserConfigurationException, SAXException, IOException{
         //File file = new File("C:\\Users\\user\\Documents\\NetBeansProjects\\Computadores\\src\\main\\java\\Computadores.xml");
@@ -53,20 +53,19 @@ public class XmlComputerDao implements Dao<Computer> {
                 
                 for (int componentIt = 0; componentIt <  componentNodeList.getLength(); componentIt++) {
                     Node nodeComponent = componentNodeList.item(componentIt);
-                    Element componentElement = (Element) nodeComponent;
                     
-                    System.out.println("\nNode Name :" + componentElement.getElementsByTagName("componentName").item(0).getTextContent());
-                    
-                    computerComponent.add(
-                        new ComputerComponents(
-                                componentElement.getElementsByTagName("componentName").item(0).getTextContent(), 
-                                componentElement.getElementsByTagName("componentReference").item(0).getTextContent()
-                        )
-                    );                    
-                    
+                    if (nodeComponent.getNodeType() == Node.ELEMENT_NODE) {
+                        Element componentElement = (Element) nodeComponent;
+                        //System.out.println("Nombre :" + componentElement.getElementsByTagName("componentName").item(0).getTextContent());                        
+                        computerComponent.add(
+                                new ComputerComponents(
+                                        componentElement.getElementsByTagName("componentName").item(0).getTextContent(), 
+                                        componentElement.getElementsByTagName("componentReference").item(0).getTextContent()
+                                )
+                        );                        
+                    }
                 }
-                
-                
+                // 
                 computer.add(
                     new Computer(
                         eElement.getElementsByTagName("name").item(0).getTextContent(), 

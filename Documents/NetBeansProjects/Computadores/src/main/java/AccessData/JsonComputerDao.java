@@ -25,7 +25,7 @@ import org.json.simple.parser.ParseException;
 public class JsonComputerDao implements Dao<Computer> {
     
     private List<Computer> computer ;
-    private List<ComputerComponents> computerComponent;
+    private List<ComputerComponents> computerComponent = new ArrayList<>();
     JSONParser parser = new  JSONParser();
     
     public JsonComputerDao() throws FileNotFoundException, IOException, ParseException{
@@ -46,8 +46,8 @@ public class JsonComputerDao implements Dao<Computer> {
                     // Agregar en la lista los componentes de cada computador.
                     computerComponent.add(
                         new ComputerComponents(
-                                String.valueOf(componentJson.get("")),
-                                String.valueOf(componentJson.get(""))
+                                String.valueOf(componentJson.get("componentName")),
+                                String.valueOf(componentJson.get("componentReference"))
                         )                            
                     );                    
                 }

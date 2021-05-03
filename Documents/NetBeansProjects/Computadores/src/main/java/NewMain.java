@@ -6,6 +6,7 @@ import Model.Computer;
 import Model.ComputerComponents;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import org.json.simple.parser.ParseException;
@@ -40,16 +41,18 @@ public class NewMain {
         IConnection computerXML = elementFactory.getConnection("xml");
         
         //Call method getAll
-        computerXML.getAll().forEach(c -> {
-            System.out.println(
-                    //"Computador xml: [Descripcion : " + c.getDescripcion()+ ", Name : " + c.getName() + " ]"
-            );
+        computerXML.getAll().forEach(computer -> {
+            computer.getComponents().forEach(component -> {
+                System.out.println(
+                "Computador xml: [Descripcion : " + computer.getDescripcion()+ ", nombre : " + computer.getName() + ", nombre componente : " + component.getComponentName() +", referencia componente : " + component.getComponentReference() + " ]"
+                );            
+            });            
         });
         
-        /*
+        
         
         // Realizar consultar para obtener los valores desde archivo JSON
-        List<ComputerComponents> computerComponent = null;     
+        List<ComputerComponents> computerComponent = new ArrayList<>();     
         computerComponent.add(new ComputerComponents("g", "g"));
         Computer comp = new Computer("f","f", computerComponent);        
         //Obtener conexión con el objeto JSON.
@@ -60,6 +63,6 @@ public class NewMain {
                 System.out.println("Computador json: [Descripcion : " + computer.getDescripcion()+ ", Name : " + computer.getName() + ", nombre componente : " + component.getComponentName() + ", referencia : " + component.getComponentReference() + " ]");                
             });            
         });
-        */
+        
     }    
 }
