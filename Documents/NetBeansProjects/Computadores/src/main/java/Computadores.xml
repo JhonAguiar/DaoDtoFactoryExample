@@ -1,34 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 
 <computers>
-    <part id="part1">
-        <name>Teclado Mintaka</name>
-        <descripcion>Mintaka 480</descripcion>
-    </part>
-    <part id="part2">
-        <name>Mouse microsoft</name>
-        <descripcion>Microsoft 1020</descripcion>
-    </part>
-    <part id="part3">
-        <name>Procesador AMD</name>
-        <descripcion>AMD Ryzen 5</descripcion>
-    </part>
-    <part id="part4">
-        <name>Base refrigerante</name>
-        <descripcion>Trust 2020</descripcion>
-    </part>
-    <part id="part5">
-        <name>Hub de 8 peuertos</name>
-        <descripcion>Hub marca logitech</descripcion>
-    </part>
-    <part id="part6">
-        <name>Pantalla samsung</name>
-        <descripcion>samsung 4K 32 pulgadas</descripcion>
-    </part>
+    <computer id="computer1">
+        <name>Computadora 1 XML</name>
+        <descripcion>Esta es la computadora 1 XML</descripcion>			
+        <components>
+            <part id="component1">
+                <componentName>Mouse Logitech</componentName>
+                <componentReference>G502</componentReference>		
+            </part>
+        </components>		
+        <components>
+            <part id="component2">
+                <componentName>Monitor Aorus</componentName>
+                <componentReference>FI 27Q</componentReference>		
+            </part>
+        </components>		
+        <components>
+            <part id="component3">
+                <componentName>Teclado Mecanico MSI</componentName>
+                <componentReference>Vigor gk50 lp</componentReference>		
+            </part>
+        </components>		
+        <components>
+            <part id="component4">
+                <componentName>Procesador AMD</componentName>
+                <componentReference>Ryzen 5</componentReference>		
+            </part>
+        </components>
+        <components>
+            <part id="component5">
+                <componentName>Memoria RAM</componentName>
+                <componentReference>Vengeance RGB Pro 16GB</componentReference>		
+            </part>
+        </components>
+        <components>
+            <part id="component6">
+                <componentName>Placa Madre</componentName>
+                <componentReference>Aorus Pro WiFi</componentReference>		
+            </part>
+        </components>
+    </computer>  
+
+    <computer id="computer2">
+        <name>Computadora 2 XML</name>
+        <descripcion>Esta es la computadora 2 XML</descripcion>			
+        <components>
+            <part id="component1">
+                <componentName>Mouse Ryzen</componentName>
+                <componentReference>Vyper</componentReference>		
+            </part>
+        </components>		
+        <components>
+            <part id="component2">
+                <componentName>Monitor LG</componentName>
+                <componentReference>LG Ultra Gear 27</componentReference>		
+            </part>
+        </components>		
+        <components>
+            <part id="component3">
+                <componentName>Teclado Mecanico Logitech</componentName>
+                <componentReference>ogitech Pro Gaming KeyBoard</componentReference>		
+            </part>
+        </components>		
+        <components>
+            <part id="component4">
+                <componentName>Procesador Intel</componentName>
+                <componentReference>Intel Core I7</componentReference>		
+            </part>
+        </components>
+        <components>
+            <part id="component5">
+                <componentName>Memoria RAM</componentName>
+                <componentReference>Corsair RGB Pro 16GB</componentReference>		
+            </part>
+        </components>
+        <components>
+            <part id="component6">
+                <componentName>Placa Madre</componentName>
+                <componentReference>MSI Carbon Pro WiFi</componentReference>		
+            </part>
+        </components>
+    </computer> 	
 </computers>

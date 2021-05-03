@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.List;
+
 /**
  *
  * @author user
@@ -12,10 +14,20 @@ package Model;
 public class Computer {
     private String name;
     private String descripcion;
+    private List<ComputerComponents> components;    
 
-    public Computer(String name, String descripcion) {
+    public Computer(String name, String descripcion, List<ComputerComponents> components) {
         this.name = name;
         this.descripcion = descripcion;
+        this.components = components;
+    }
+
+    public List<ComputerComponents> getComponents() {
+        return components;
+    }
+
+    public void setComponents(List<ComputerComponents> components) {
+        this.components = components;
     }
     
     public String getName() {
@@ -33,6 +45,8 @@ public class Computer {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
+ 
     
     
 }

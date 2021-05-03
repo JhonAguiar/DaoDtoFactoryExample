@@ -1,21 +1,101 @@
 {
-    "computadores" : [
+    "computador" : [
         {
-            "name" : "mouse logitech",
-            "descripcion" : "mouse G550  "
-        },
+            "name" : "Computadora 1",
+            "descripcion" : "Esta es la computadora 1",
+            "components" : 
+            [
+                {
+                    "componentName" : "Mouse Logitech",
+                    "componentReference" : "G502"
+                },
+                {
+                    "componentName" : "Monitor Aorus",
+                    "componentReference" : "FI 27Q"
+                },
+                {
+                    "componentName" : "Teclado Mecanico MSI",
+                    "componentReference" : "Vigor gk50 lp"
+                },
+                {
+                    "componentName" : "Procesador AMD",
+                    "componentReference" : "Ryzen 5"
+                },
+                {
+                    "componentName" : "Memoria RAM",
+                    "componentReference" : "Vengeance RGB Pro 16GB"
+                },
+                {
+                    "componentName" : "Placa Madre",
+                    "componentReference" : "Aorus Pro WiFi"
+                }
+            ]
+        }
+    ],
+    "computador" : [
         {
-            "name" : "procesador",
-            "descripcion" : "intel core i7 11th Gen"
-        },
+            "name" : "Computadora 2",
+            "descripcion" : "Esta es la computadora 2",
+            "components" : 
+            [
+                {
+                    "componentName" : "Mouse Ryzen",
+                    "componentReference" : "Vyper"
+                },
+                {
+                    "componentName" : "Monitor LG",
+                    "componentReference" : "LG Ultra Gear 27"
+                },
+                {
+                    "componentName" : "Teclado Mecanico Logitech",
+                    "componentReference" : "Logitech Pro Gaming KeyBoard"
+                },
+                {
+                    "componentName" : "Procesador Intel",
+                    "componentReference" : "Intel Core I7"
+                },
+                {
+                    "componentName" : "Memoria RAM",
+                    "componentReference" : "Corsair RGB Pro 16GB"
+                },
+                {
+                    "componentName" : "Placa Madre",
+                    "componentReference" : "MSI Carbon Pro WiFi"
+                }
+            ]
+        }
+    ],
+    "computador" : [
         {
-            "name" : "teclado readragon",
-            "descripcion" : "teclado readragon 440"
-        },
-        {
-            "name" : "base refrigerante 1",
-            "descripcion" : "base ref"
+            "name" : "Computadora 3",
+            "descripcion" : "Esta es la computadora 3",
+            "components" : 
+            [
+                {
+                    "componentName" : "Mouse Genius",
+                    "componentReference" : "G303"
+                },
+                {
+                    "componentName" : "Monitor Samsung",
+                    "componentReference" : "Samsung 32"
+                },
+                {
+                    "componentName" : "Teclado Logitech",
+                    "componentReference" : "Logitech Pro Office"
+                },
+                {
+                    "componentName" : "Procesador ARM",
+                    "componentReference" : "M4"
+                },
+                {
+                    "componentName" : "Memoria RAM",
+                    "componentReference" : "Ryzen Pro 8GB"
+                },
+                {
+                    "componentName" : "Placa Madre",
+                    "componentReference" : "Asus motherboard"
+                }
+            ]
         }
     ]
-
 }

@@ -6,6 +6,7 @@
 package AccessData;
 
 import Model.Computer;
+import Model.ComputerComponents;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,21 +25,40 @@ import org.json.simple.parser.ParseException;
 public class JsonComputerDao implements Dao<Computer> {
     
     private List<Computer> computer ;
+    private List<ComputerComponents> computerComponent;
     JSONParser parser = new  JSONParser();
     
     public JsonComputerDao() throws FileNotFoundException, IOException, ParseException{
         if(computer == null ){
             computer = new ArrayList<Computer>();
-            Object obj = parser.parse(new FileReader("C:\\Users\\user\\Documents\\NetBeansProjects\\Computadores\\src\\main\\java\\Computadores.json"));
-            JSONObject jsonObject = (JSONObject) obj;
+            //Object obj = parser.parse(new FileReader("C:\\Users\\user\\Documents\\NetBeansProjects\\Computadores\\src\\main\\java\\Computadores.json"));
+            Object obj = parser.parse(new FileReader("D:\\02 Projects And Learning\\DaoDtoFactoryExample\\Documents\\NetBeansProjects\\Computadores\\src\\main\\java\\Computadores.json"));
+            JSONObject computersJson = (JSONObject) obj;
 
-            JSONArray array = (JSONArray) jsonObject.get("computadores");
+            JSONArray computerArray = (JSONArray) computersJson.get("computadores");
 
-            for(int i = 0 ; i < array.size() ; i++) {
-                JSONObject jsonObject1 = (JSONObject) array.get(i);
-                //computer.add(new Computer()));
-                //String.valueOf(jsonObject1.get("name")),String.valueOf(jsonObject1.get("description")
-                computer.add(new Computer(String.valueOf(jsonObject1.get("name")) , String.valueOf(jsonObject1.get("descripcion"))));
+            for(int computerItem = 0 ; computerItem < computerArray.size() ; computerItem++) {                
+                JSONObject computerJson = (JSONObject)computerArray.get(computerItem);
+                // Recuperar lista de componentes del computador del objeto computador
+                JSONArray componentArray = (JSONArray) computerJson.get("components");                
+                for (int componentItem = 0; componentItem < componentArray.size(); componentItem++) {
+                    JSONObject componentJson = (JSONObject)componentArray.get(componentItem);
+                    // Agregar en la lista los componentes de cada computador.
+                    computerComponent.add(
+                        new ComputerComponents(
+                                String.valueOf(componentJson.get("")),
+                                String.valueOf(componentJson.get(""))
+                        )                            
+                    );                    
+                }
+                // Agregar objeto tipo lista para el computador.
+                computer.add(
+                    new Computer(
+                        String.valueOf(computerJson.get("name")),
+                        String.valueOf(computerJson.get("descripcion")),
+                        computerComponent                        
+                    )
+                );
             }
         }
     }

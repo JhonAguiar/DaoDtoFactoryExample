@@ -3,8 +3,10 @@ import Business.ProducerFactory;
 import Business.AbstractFactory;
 import Business.IConnection;
 import Model.Computer;
+import Model.ComputerComponents;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import org.json.simple.parser.ParseException;
 import org.xml.sax.SAXException;
@@ -21,6 +23,7 @@ import org.xml.sax.SAXException;
  */
 public class NewMain {
     
+    
     /**
      * @param args the command line arguments
      * @throws java.io.IOException
@@ -33,25 +36,30 @@ public class NewMain {
             
         //get factory
         AbstractFactory elementFactory = ProducerFactory.getFactory(true);
-        //get an object of Connection xml
-        IConnection computer = elementFactory.getConnection("xml");
-            
+        //Obtener conexión con el objeto XML.
+        IConnection computerXML = elementFactory.getConnection("xml");
+        
         //Call method getAll
-        computer.getAll().forEach(c -> {
-            System.out.println("Computador xml: [Descripcion : " + c.getDescripcion()+ ", Name : " + c.getName() + " ]");
-        });
-           
-        Computer comp = new Computer("f","f");
-
-        
-        //get an object of Connection xml
-        IConnection computer2 = elementFactory.getConnection("json");
-        computer2.save(comp);
-        computer2.getAll().forEach(c -> {
-                System.out.println("Computador json: [Descripcion : " + c.getDescripcion()+ ", Name : " + c.getName() + " ]");
+        computerXML.getAll().forEach(c -> {
+            System.out.println(
+                    //"Computador xml: [Descripcion : " + c.getDescripcion()+ ", Name : " + c.getName() + " ]"
+            );
         });
         
+        /*
         
-    }
-    
+        // Realizar consultar para obtener los valores desde archivo JSON
+        List<ComputerComponents> computerComponent = null;     
+        computerComponent.add(new ComputerComponents("g", "g"));
+        Computer comp = new Computer("f","f", computerComponent);        
+        //Obtener conexión con el objeto JSON.
+        IConnection computerJSON = elementFactory.getConnection("json");
+        computerJSON.save(comp);
+        computerJSON.getAll().forEach(computer -> {            
+            computer.getComponents().forEach(component -> {
+                System.out.println("Computador json: [Descripcion : " + computer.getDescripcion()+ ", Name : " + computer.getName() + ", nombre componente : " + component.getComponentName() + ", referencia : " + component.getComponentReference() + " ]");                
+            });            
+        });
+        */
+    }    
 }
